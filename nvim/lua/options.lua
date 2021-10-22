@@ -1,7 +1,7 @@
 -- colorscheme
 vim.api.nvim_set_option('termguicolors', true)
 vim.g.substrata_italic_booleans = true
-vim.cmd [[colorscheme substrata]]
+vim.cmd [[colorscheme neon]]
 -- vim.g.tokyonight_transparent = true
 -- vim.cmd [[colorscheme tokyonight]]
 vim.cmd [[language en_US.utf-8]]

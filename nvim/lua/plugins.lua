@@ -112,6 +112,7 @@ local plugins = {
   {'tpope/vim-fugitive'},
   {'tpope/vim-sleuth'},
   {'b3nj5m1n/kommentary'},
+  {'f-person/git-blame.nvim'},
   {'kvrohit/tasks.nvim'},
   {
     'windwp/nvim-autopairs',
@@ -127,6 +128,15 @@ local plugins = {
     end
   },
   {'lukas-reineke/indent-blankline.nvim'},
+  {
+    'folke/todo-comments.nvim',
+    requires = {
+      {'nvim-lua/plenary.nvim'}
+    },
+    config = function()
+      require('todo-comments').setup()
+    end
+  },
 }
 
 vim.cmd([[autocmd BufWritePost plugins.lua source <afile> | PackerCompile]])
