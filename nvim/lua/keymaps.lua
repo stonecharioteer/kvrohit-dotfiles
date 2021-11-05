@@ -17,10 +17,10 @@ vim.api.nvim_set_keymap('n', '<Leader>td', ':UndoTask<CR>', opts)
 -- vim.api.nvim_set_keymap('n', '<Leader>ft', ':NvimTreeFindFile<CR>', opts)
 
 -- telescope
-vim.api.nvim_set_keymap('n', '<Leader>tfb', ':Telescope buffers<CR>', opts)
+vim.api.nvim_set_keymap('n', '<Leader>tbb', ':Telescope buffers<CR>', opts)
 vim.api.nvim_set_keymap('n', '<Leader>tff', ':Telescope find_files<CR>', opts)
-vim.api.nvim_set_keymap('n', '<Leader>tfg', ':Telescope live_grep<CR>', opts)
-vim.api.nvim_set_keymap('n', '<Leader>tfh', ':Telescope help_tags<CR>', opts)
+vim.api.nvim_set_keymap('n', '<Leader>tlg', ':Telescope live_grep<CR>', opts)
+vim.api.nvim_set_keymap('n', '<Leader>tfb', ':Telescope file_browser<CR>', opts)
 vim.api.nvim_set_keymap('n', '<Leader>ttt', ':Telescope<CR>', opts)
 vim.api.nvim_set_keymap('n', '<Leader>tts', ':Telescope treesitter<CR>', opts)
 
