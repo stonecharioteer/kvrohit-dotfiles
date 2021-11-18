@@ -1,9 +1,9 @@
 -- colorscheme
 vim.api.nvim_set_option('termguicolors', true)
 vim.g.substrata_italic_booleans = true
-vim.cmd [[colorscheme neon]]
--- vim.g.tokyonight_transparent = true
--- vim.cmd [[colorscheme tokyonight]]
+-- vim.cmd [[colorscheme neon]]
+vim.g.substrata_italic_functions = true
+vim.cmd [[colorscheme substrata]]
 vim.cmd [[language en_US.utf-8]]
 
 -- options
@@ -21,7 +21,7 @@ vim.opt.hidden = true
 vim.opt.updatetime = 300
 vim.opt.scrolloff = 5
 vim.opt.sidescrolloff = 5
-vim.opt.completeopt = 'menuone,noselect'
+vim.opt.completeopt = 'menu,menuone,noselect'
 vim.opt.shortmess = vim.o.shortmess .. 'c'
 vim.opt.showmode = false
 vim.opt.number = true
@@ -50,4 +50,3 @@ vim.g.indent_blankline_char = '│'
 vim.g.indent_blankline_use_treesitter = true
 vim.g.indent_blankline_show_trailing_blankline_indent = false
 vim.g.indent_blankline_filetype_exclude = {'help', 'fugitive', 'packer'}
-
