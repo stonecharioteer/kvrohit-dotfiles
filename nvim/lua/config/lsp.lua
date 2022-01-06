@@ -29,7 +29,7 @@ M.setup = function()
   end
 
   -- language servers
-  local servers = { "pyright", "rust_analyzer", "bashls", "cssls", "html", "tsserver", "yamlls" }
+  local servers = { "pyright", "rust_analyzer", "bashls", "cssls", "html", "tsserver", "yamlls", "gopls"}
   -- capabilities
   local capabilities = vim.lsp.protocol.make_client_capabilities()
   capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)

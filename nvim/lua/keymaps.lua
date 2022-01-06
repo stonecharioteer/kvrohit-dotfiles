@@ -20,8 +20,9 @@ vim.api.nvim_set_keymap('n', '<Leader>td', ':UndoTask<CR>', opts)
 -- telescope
 vim.api.nvim_set_keymap('n', '<Leader>tbb', ':Telescope buffers<CR>', opts)
 vim.api.nvim_set_keymap('n', '<Leader>tff', ':Telescope find_files<CR>', opts)
+vim.api.nvim_set_keymap('n', '<Leader>tgf', ':Telescope git_files<CR>', opts)
 vim.api.nvim_set_keymap('n', '<Leader>tlg', ':Telescope live_grep<CR>', opts)
-vim.api.nvim_set_keymap('n', '<Leader>tfb', ':Telescope file_browser<CR>', opts)
+vim.api.nvim_set_keymap('n', '<Leader>tfb', ':Telescope file_browser hidden=True<CR>', opts)
 vim.api.nvim_set_keymap('n', '<Leader>ttt', ':Telescope<CR>', opts)
 vim.api.nvim_set_keymap('n', '<Leader>tts', ':Telescope treesitter<CR>', opts)
 
@@ -32,3 +33,8 @@ vim.api.nvim_set_keymap('n', '<Right>', ':BufNext<CR>', opts)
 -- auto commands
 vim.cmd [[autocmd TermOpen * setlocal nonu nornu]]
 vim.cmd [[au TextYankPost * lua vim.highlight.on_yank {on_visual = false}]]
+
+vim.api.nvim_set_keymap('n', '<C-h>', '<C-w><C-h>', opts)
+vim.api.nvim_set_keymap('n', '<C-j>', '<C-w><C-j>', opts)
+vim.api.nvim_set_keymap('n', '<C-k>', '<C-w><C-k>', opts)
+vim.api.nvim_set_keymap('n', '<C-l>', '<C-w><C-l>', opts)

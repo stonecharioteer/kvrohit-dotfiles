@@ -23,9 +23,10 @@ local plugins = {
   -- packer
   {'wbthomason/packer.nvim'},
   -- color schemes
-  {'kvrohit/substrata.nvim'},
+  -- {'kvrohit/substrata.nvim'},
   {'rafamadriz/neon'},
-  {'folke/tokyonight.nvim'},
+  {'ThePrimeagen/vim-be-good'},
+  -- {'folke/tokyonight.nvim'},
   -- enhancements
   {
     'nvim-telescope/telescope.nvim',
@@ -75,12 +76,14 @@ local plugins = {
   },
   {
     'akinsho/nvim-toggleterm.lua',
+    -- commit = '1a92493bc35a4279282da8aa0132e4bb00049c39',
     config = function()
       require('config.toggleterm').setup()
     end
   },
   {
     'jose-elias-alvarez/buftabline.nvim',
+    -- commit = '1a92493bc35a4279282da8aa0132e4bb00049c39',
     config = function()
       require('config.buftabline').setup()
     end
@@ -135,7 +138,7 @@ local plugins = {
     end
   },
   {'lukas-reineke/indent-blankline.nvim'},
-  {
+  --[[ {
     'folke/todo-comments.nvim',
     requires = {
       {'nvim-lua/plenary.nvim'}
@@ -143,14 +146,24 @@ local plugins = {
     config = function()
       require('todo-comments').setup()
     end
-  },
+  }, ]]
   {
     "max397574/better-escape.nvim",
     config = function()
       require("better_escape").setup()
     end,
   },
-  {'fladson/vim-kitty'},
+  {
+    "folke/trouble.nvim",
+    requires = "kyazdani42/nvim-web-devicons",
+    config = function()
+      require("trouble").setup {
+        -- your configuration comes here
+        -- or leave it empty to use the default settings
+        -- refer to the configuration section below
+      }
+    end
+  },
 }
 
 vim.cmd([[autocmd BufWritePost plugins.lua source <afile> | PackerCompile]])
