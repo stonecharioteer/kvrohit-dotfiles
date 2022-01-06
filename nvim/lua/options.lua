@@ -1,9 +1,8 @@
 -- colorscheme
 vim.api.nvim_set_option('termguicolors', true)
-vim.g.substrata_italic_booleans = true
 -- vim.cmd [[colorscheme neon]]
-vim.g.substrata_italic_functions = true
-vim.cmd [[colorscheme substrata]]
+vim.cmd [[colorscheme neon]]
+-- vim.cmd [[language en_US.utf-8]]
 
 -- options
 vim.opt.laststatus = 2
@@ -29,6 +28,8 @@ vim.opt.signcolumn = 'yes'
 vim.opt.wrap = false
 vim.opt.cursorline = true
 vim.opt.colorcolumn = "120"
+vim.opt.foldmethod = "marker"
+vim.opt.modeline = true
 
 -- indent
 vim.opt.tabstop = 4
