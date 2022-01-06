@@ -4,7 +4,6 @@ vim.g.substrata_italic_booleans = true
 -- vim.cmd [[colorscheme neon]]
 vim.g.substrata_italic_functions = true
 vim.cmd [[colorscheme substrata]]
-vim.cmd [[language en_US.utf-8]]
 
 -- options
 vim.opt.laststatus = 2
