@@ -23,10 +23,8 @@ local plugins = {
   -- packer
   {'wbthomason/packer.nvim'},
   -- color schemes
-  -- {'kvrohit/substrata.nvim'},
   {'rafamadriz/neon'},
   {'ThePrimeagen/vim-be-good'},
-  -- {'folke/tokyonight.nvim'},
   -- enhancements
   {
     'nvim-telescope/telescope.nvim',
@@ -138,7 +136,7 @@ local plugins = {
     end
   },
   {'lukas-reineke/indent-blankline.nvim'},
-  --[[ {
+  {
     'folke/todo-comments.nvim',
     requires = {
       {'nvim-lua/plenary.nvim'}
@@ -146,7 +144,7 @@ local plugins = {
     config = function()
       require('todo-comments').setup()
     end
-  }, ]]
+  },
   {
     "max397574/better-escape.nvim",
     config = function()
