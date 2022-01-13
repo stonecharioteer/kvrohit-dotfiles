@@ -36,6 +36,12 @@ local plugins = {
       require('config.telescope').setup()
     end
   },
+  {
+    'nvim-telescope/telescope-file-browser.nvim',
+    config = function()
+      require("telescope").load_extension "file_browser"
+    end
+  },
   -- lsp
   {
     'neovim/nvim-lspconfig',
@@ -43,6 +49,8 @@ local plugins = {
       require('config.lsp').setup()
     end
   },
+  {'vim-airline/vim-airline'},
+  {'christoomey/vim-tmux-navigator'},
   {'ray-x/lsp_signature.nvim'},
   -- completion
   {
