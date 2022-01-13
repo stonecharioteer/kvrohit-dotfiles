@@ -1,11 +1,11 @@
 local execute = vim.api.nvim_command
 local fn = vim.fn
 
-local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
+local install_path = fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
 
 if fn.empty(fn.glob(install_path)) > 0 then
-  fn.system({'git', 'clone', 'https://github.com/wbthomason/packer.nvim', install_path})
-  execute 'packadd packer.nvim'
+  fn.system({ "git", "clone", "https://github.com/wbthomason/packer.nvim", install_path })
+  execute("packadd packer.nvim")
 end
 
 local packer_ok, packer = pcall(require, "packer")
@@ -13,88 +13,89 @@ if not packer_ok then
   return
 end
 
-packer.init {
+packer.init({
   git = {
     clone_timeout = 120,
   },
-}
+})
 
 local plugins = {
   -- packer
-  {'wbthomason/packer.nvim'},
+  { "wbthomason/packer.nvim" },
   -- color schemes
-  {'kvrohit/substrata.nvim'},
-  {'rafamadriz/neon'},
-  {'folke/tokyonight.nvim'},
+  { "kvrohit/substrata.nvim" },
+  { "rafamadriz/neon" },
+  { "folke/tokyonight.nvim" },
+  { "catppuccin/nvim" },
   -- enhancements
   {
-    'nvim-telescope/telescope.nvim',
+    "nvim-telescope/telescope.nvim",
     requires = {
-      {'nvim-lua/popup.nvim'},
-      {'nvim-lua/plenary.nvim'}
+      { "nvim-lua/popup.nvim" },
+      { "nvim-lua/plenary.nvim" },
     },
     config = function()
-      require('config.telescope').setup()
-    end
+      require("config.telescope").setup()
+    end,
   },
   -- lsp
   {
-    'neovim/nvim-lspconfig',
+    "neovim/nvim-lspconfig",
     config = function()
-      require('config.lsp').setup()
-    end
+      require("config.lsp").setup()
+    end,
   },
-  {'ray-x/lsp_signature.nvim'},
+  { "ray-x/lsp_signature.nvim" },
   -- completion
   {
-    'hrsh7th/nvim-cmp',
+    "hrsh7th/nvim-cmp",
     requires = {
-      'hrsh7th/cmp-buffer',
-      'hrsh7th/cmp-nvim-lsp',
-      'hrsh7th/cmp-path',
-      'L3MON4D3/LuaSnip',
-      'saadparwaiz1/cmp_luasnip',
+      "hrsh7th/cmp-buffer",
+      "hrsh7th/cmp-nvim-lsp",
+      "hrsh7th/cmp-path",
+      "L3MON4D3/LuaSnip",
+      "saadparwaiz1/cmp_luasnip",
     },
     config = function()
-      require('config.cmp').setup()
-    end
+      require("config.cmp").setup()
+    end,
   },
   {
     "abecodes/tabout.nvim",
     config = function()
-      require('config.tabout').setup()
+      require("config.tabout").setup()
     end,
     after = { "nvim-cmp" }, -- if a completion plugin is using tabs load it before
   },
   {
-    'nvim-treesitter/nvim-treesitter',
-    branch = '0.5-compat',
+    "nvim-treesitter/nvim-treesitter",
+    branch = "0.5-compat",
     config = function()
-      require('config.treesitter').setup()
-    end
+      require("config.treesitter").setup()
+    end,
   },
   {
-    'akinsho/nvim-toggleterm.lua',
+    "akinsho/nvim-toggleterm.lua",
     config = function()
-      require('config.toggleterm').setup()
-    end
+      require("config.toggleterm").setup()
+    end,
   },
   {
-    'jose-elias-alvarez/buftabline.nvim',
+    "jose-elias-alvarez/buftabline.nvim",
     config = function()
-      require('config.buftabline').setup()
-    end
+      require("config.buftabline").setup()
+    end,
   },
   {
-    'lewis6991/gitsigns.nvim',
-    requires = { 'nvim-lua/plenary.nvim' },
+    "lewis6991/gitsigns.nvim",
+    requires = { "nvim-lua/plenary.nvim" },
     config = function()
-      require('gitsigns').setup()
-    end
+      require("gitsigns").setup()
+    end,
   },
   {
-    'kyazdani42/nvim-tree.lua',
-    requires = { 'kyazdani42/nvim-web-devicons' },
+    "kyazdani42/nvim-tree.lua",
+    requires = { "kyazdani42/nvim-web-devicons" },
     config = function()
       require('nvim-tree').setup {
         auto_close = true
@@ -102,18 +103,19 @@ local plugins = {
     end
   },
   {
-    'norcalli/nvim-colorizer.lua',
+    "norcalli/nvim-colorizer.lua",
     config = function()
-      require('colorizer').setup()
-    end
+      require("colorizer").setup()
+    end,
   },
   {
-    'famiu/feline.nvim',
+    "famiu/feline.nvim",
     config = function()
-      require('config.statusline').setup()
+      require("config.statusline").setup()
     end,
   },
   -- essentials
+<<<<<<< HEAD
   {'tpope/vim-repeat'},
   {'tpope/vim-surround'},
   {'tpope/vim-fugitive'},
@@ -125,16 +127,19 @@ local plugins = {
     'windwp/nvim-autopairs',
     after = 'nvim-cmp',
     config = function()
-      require('config.autopairs').setup()
-    end
+      require("config.autopairs").setup()
+    end,
   },
   {
-    'mhartington/formatter.nvim',
-    config = function()
-      require('config.formatter').setup()
-    end
+    "windwp/nvim-ts-autotag",
   },
-  {'lukas-reineke/indent-blankline.nvim'},
+  {
+    "mhartington/formatter.nvim",
+    config = function()
+      require("config.formatter").setup()
+    end,
+  },
+  { "lukas-reineke/indent-blankline.nvim" },
   {
     'folke/todo-comments.nvim',
     requires = {
@@ -150,7 +155,13 @@ local plugins = {
       require("better_escape").setup()
     end,
   },
-  {'fladson/vim-kitty'},
+  {
+    "numToStr/Comment.nvim",
+    config = function()
+      require("Comment").setup()
+    end,
+  },
+  { "fladson/vim-kitty" },
 }
 
 vim.cmd([[autocmd BufWritePost plugins.lua source <afile> | PackerCompile]])
