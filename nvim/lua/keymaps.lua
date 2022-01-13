@@ -22,7 +22,7 @@ vim.api.nvim_set_keymap('n', '<Leader>tbb', ':Telescope buffers<CR>', opts)
 vim.api.nvim_set_keymap('n', '<Leader>tff', ':Telescope find_files<CR>', opts)
 vim.api.nvim_set_keymap('n', '<Leader>tgf', ':Telescope git_files<CR>', opts)
 vim.api.nvim_set_keymap('n', '<Leader>tlg', ':Telescope live_grep<CR>', opts)
-vim.api.nvim_set_keymap('n', '<Leader>tfb', ':Telescope file_browser hidden=True<CR>', opts)
+vim.api.nvim_set_keymap('n', '<Leader>tfb', "<cmd>lua require 'telescope'.extensions.file_browser.file_browser()<CR>", opts)
 vim.api.nvim_set_keymap('n', '<Leader>ttt', ':Telescope<CR>', opts)
 vim.api.nvim_set_keymap('n', '<Leader>tts', ':Telescope treesitter<CR>', opts)
 
