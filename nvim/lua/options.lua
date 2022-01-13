@@ -29,6 +29,7 @@ vim.opt.cursorline = true
 vim.opt.colorcolumn = "120"
 vim.opt.foldmethod = "marker"
 vim.opt.modeline = true
+vim.opt.filetype.plugin = "on"
 
 -- indent
 vim.opt.tabstop = 4
@@ -49,3 +50,5 @@ vim.g.indent_blankline_char = '│'
 vim.g.indent_blankline_use_treesitter = true
 vim.g.indent_blankline_show_trailing_blankline_indent = false
 vim.g.indent_blankline_filetype_exclude = {'help', 'fugitive', 'packer'}
+
+vim.g.python3_host_prog = '/usr/bin/python'
