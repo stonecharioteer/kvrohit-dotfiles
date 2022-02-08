@@ -38,3 +38,7 @@ vim.api.nvim_set_keymap('n', '<C-h>', '<C-w><C-h>', opts)
 vim.api.nvim_set_keymap('n', '<C-j>', '<C-w><C-j>', opts)
 vim.api.nvim_set_keymap('n', '<C-k>', '<C-w><C-k>', opts)
 vim.api.nvim_set_keymap('n', '<C-l>', '<C-w><C-l>', opts)
+
+-- folke/trouble
+vim.api.nvim_set_keymap('n', '<Leader>trt', ':TroubleToggle<CR>', opts)
+vim.api.nvim_set_keymap('n', '<Leader>trr', ':TroubleRefresh<CR>', opts)
