@@ -57,7 +57,6 @@ local plugins = {
   },
   {'vim-airline/vim-airline'},
   {'christoomey/vim-tmux-navigator'},
-  {'ray-x/lsp_signature.nvim'},
   { "williamboman/nvim-lsp-installer" },
   { "ray-x/lsp_signature.nvim" },
   -- completion
@@ -187,9 +186,9 @@ local plugins = {
       require("Comment").setup()
     end,
   },
-  { "fladson/vim-kitty" },
   { "b0o/schemastore.nvim" },
   { "Olical/conjure" },
+  {"rafamadriz/friendly-snippets"},
   {
     "j-hui/fidget.nvim",
     config = function()
