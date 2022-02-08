@@ -42,3 +42,4 @@ vim.api.nvim_set_keymap('n', '<C-l>', '<C-w><C-l>', opts)
 -- folke/trouble
 vim.api.nvim_set_keymap('n', '<Leader>trt', ':TroubleToggle<CR>', opts)
 vim.api.nvim_set_keymap('n', '<Leader>trr', ':TroubleRefresh<CR>', opts)
+
