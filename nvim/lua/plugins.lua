@@ -26,7 +26,9 @@ local plugins = {
   {'rafamadriz/neon'},
   {'ThePrimeagen/vim-be-good'},
   {'kvrohit/substrata.nvim'},
+  {'sainnhe/sonokai'},
   {'folke/tokyonight.nvim'},
+  {"jacoborus/tender.vim"},
   { "catppuccin/nvim" },
   -- enhancements
   {
@@ -174,6 +176,7 @@ local plugins = {
       }
     end
   },
+  {"mracos/mermaid.vim"},
   {'fladson/vim-kitty'},
   {
     "numToStr/Comment.nvim",
