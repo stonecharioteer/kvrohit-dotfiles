@@ -1,7 +1,7 @@
 -- colorscheme
 vim.api.nvim_set_option('termguicolors', true)
 vim.cmd [[language en_US.utf-8]]
-vim.g.sonokai_style = 'maia' ]]
+vim.g.sonokai_style = 'maia'
 vim.cmd [[colorscheme neon]]
 vim.g.airline_theme = 'sonokai'
 vim.g.substrata_italic_keywords = true
