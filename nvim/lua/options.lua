@@ -1,12 +1,11 @@
 -- colorscheme
 vim.api.nvim_set_option('termguicolors', true)
 vim.cmd [[language en_US.utf-8]]
---[[ vim.g.substrata_italic_booleans = true
-vim.g.substrata_italic_functions = true
 vim.g.sonokai_style = 'maia' ]]
 vim.cmd [[colorscheme neon]]
 vim.g.airline_theme = 'sonokai'
-
+vim.g.substrata_italic_keywords = true
+vim.g.substrata_variant = "brighter"
 
 -- options
 vim.opt.laststatus = 2
@@ -19,7 +18,6 @@ vim.opt.splitright = true
 vim.opt.splitbelow = true
 vim.opt.ignorecase = true
 vim.opt.hlsearch = false
-vim.opt.hidden = true
 vim.opt.updatetime = 300
 vim.opt.scrolloff = 5
 vim.opt.sidescrolloff = 5
@@ -47,7 +45,9 @@ vim.opt.expandtab = true
 
 -- set leader to space
 vim.g.mapleader = " "
+vim.g.maplocalleader = " "
 vim.b.mapleader = " "
+vim.b.maplocalleader = " "
 
 -- indentline
 vim.g.indent_blankline_setColors = 0

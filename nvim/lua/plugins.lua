@@ -30,6 +30,7 @@ local plugins = {
   {'folke/tokyonight.nvim'},
   {"jacoborus/tender.vim"},
   { "catppuccin/nvim" },
+  { "rebelot/kanagawa.nvim" },
   -- enhancements
   {
     "nvim-telescope/telescope.nvim",
@@ -57,6 +58,8 @@ local plugins = {
   {'vim-airline/vim-airline'},
   {'christoomey/vim-tmux-navigator'},
   {'ray-x/lsp_signature.nvim'},
+  { "williamboman/nvim-lsp-installer" },
+  { "ray-x/lsp_signature.nvim" },
   -- completion
   {
     "hrsh7th/nvim-cmp",
@@ -80,7 +83,6 @@ local plugins = {
   },
   {
     "nvim-treesitter/nvim-treesitter",
-    branch = "0.5-compat",
     config = function()
       require("config.treesitter").setup()
     end,
@@ -144,10 +146,11 @@ local plugins = {
     "windwp/nvim-ts-autotag",
   },
   {
-    "mhartington/formatter.nvim",
+    "jose-elias-alvarez/null-ls.nvim",
     config = function()
-      require("config.formatter").setup()
+      require("config.null-ls").setup()
     end,
+    requires = { "nvim-lua/plenary.nvim" },
   },
   { "lukas-reineke/indent-blankline.nvim" },
   {
@@ -182,6 +185,15 @@ local plugins = {
     "numToStr/Comment.nvim",
     config = function()
       require("Comment").setup()
+    end,
+  },
+  { "fladson/vim-kitty" },
+  { "b0o/schemastore.nvim" },
+  { "Olical/conjure" },
+  {
+    "j-hui/fidget.nvim",
+    config = function()
+      require("fidget").setup()
     end,
   },
 }
