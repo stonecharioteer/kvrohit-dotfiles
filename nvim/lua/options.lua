@@ -1,9 +1,12 @@
 -- colorscheme
 vim.api.nvim_set_option('termguicolors', true)
-vim.g.substrata_italic_booleans = true
-vim.g.substrata_italic_functions = true
-vim.cmd [[colorscheme substrata]]
 vim.cmd [[language en_US.utf-8]]
+--[[ vim.g.substrata_italic_booleans = true
+vim.g.substrata_italic_functions = true
+vim.g.sonokai_style = 'maia' ]]
+vim.cmd [[colorscheme neon]]
+vim.g.airline_theme = 'sonokai'
+
 
 -- options
 vim.opt.laststatus = 2
@@ -32,6 +35,7 @@ vim.opt.colorcolumn = "120"
 vim.opt.foldmethod = "marker"
 vim.opt.modeline = true
 vim.opt.filetype.plugin = "on"
+vim.cmd [[filetype on]]
 
 -- indent
 vim.opt.tabstop = 4
@@ -54,4 +58,4 @@ vim.g.indent_blankline_show_trailing_blankline_indent = false
 vim.g.indent_blankline_filetype_exclude = { "help", "fugitive", "packer" }
 
 -- python
-vim.g.python3_host_prog = '/usr/bin/python'
+vim.g.python3_host_prog = '/bin/python3'
