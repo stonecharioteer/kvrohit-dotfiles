@@ -195,6 +195,8 @@ local plugins = {
       require("fidget").setup()
     end,
   },
+  -- Merklescience config
+  {'jmeekhof/gsql-vim'},
 }
 
 vim.cmd([[autocmd BufWritePost plugins.lua source <afile> | PackerCompile]])
