@@ -1,6 +1,6 @@
 local M = {}
-local cmp = require('cmp')
-local luasnip = require('luasnip')
+local cmp = require("cmp")
+local luasnip = require("luasnip")
 
 local has_words_before = function()
   local line, col = unpack(vim.api.nvim_win_get_cursor(0))
@@ -8,7 +8,7 @@ local has_words_before = function()
 end
 
 M.setup = function()
-  cmp.setup {
+  local opts = {
     snippet = {
       expand = function(args)
         luasnip.lsp_expand(args.body)
@@ -23,14 +23,14 @@ M.setup = function()
       min_height = 1,
     },
     mapping = {
-      ['<C-d>'] = cmp.mapping(cmp.mapping.scroll_docs(-4), { 'i', 'c' }),
-      ['<C-u>'] = cmp.mapping(cmp.mapping.scroll_docs(4), { 'i', 'c' }),
-      ['<C-Space>'] = cmp.mapping(cmp.mapping.complete(), { 'i', 'c' }),
-      ['<C-e>'] = cmp.mapping({
+      ["<C-d>"] = cmp.mapping(cmp.mapping.scroll_docs(-4), { "i", "c" }),
+      ["<C-u>"] = cmp.mapping(cmp.mapping.scroll_docs(4), { "i", "c" }),
+      ["<C-Space>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }),
+      ["<C-e>"] = cmp.mapping({
         i = cmp.mapping.abort(),
         c = cmp.mapping.close(),
       }),
-      ['<CR>'] = cmp.mapping.confirm({
+      ["<CR>"] = cmp.mapping.confirm({
         behavior = cmp.ConfirmBehavior.Replace,
         select = true,
       }),
@@ -56,22 +56,22 @@ M.setup = function()
       end, { "i", "s" }),
     },
     sources = {
-      { name = 'luasnip' },
-      { name = 'nvim_lsp' },
-      { name = 'path' },
-      { name = 'buffer', keyword_length = 5 },
+      { name = "luasnip" },
+      { name = "nvim_lsp" },
+      { name = "path" },
+      { name = "buffer", keyword_length = 5 },
     },
     formatting = {
       format = function(entry, vim_item)
-        local icons = require('config.lspkind').icons
-        vim_item.kind = icons[vim_item.kind] .. vim_item.kind
+        local icons = require("config.lspkind").icons
+        vim_item.kind = string.format("%s %s", icons[vim_item.kind], vim_item.kind)
         vim_item.menu = ({
-          buffer = "[Buff]",
-          nvim_lsp = "[LSP]",
-          path = "[Path]",
-          vsnip = "[Snip]",
-          luasnip = "[Snip]",
-          calc = "[Calc]",
+          buffer = "﬘",
+          nvim_lsp = "",
+          path = "",
+          vsnip = "",
+          luasnip = "",
+          calc = "",
         })[entry.source.name]
         vim_item.dup = ({
           buffer = 1,
@@ -86,6 +86,8 @@ M.setup = function()
       ghost_text = true,
     },
   }
+
+  cmp.setup(opts)
 end
 
 return M

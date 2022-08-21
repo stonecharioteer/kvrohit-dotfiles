@@ -1,10 +1,15 @@
 local M = {}
 
 M.setup = function()
-  require('nvim-treesitter.configs').setup {
-    ensure_installed = 'maintained',
-    highlight = {enable = true},
+  local opts = {
+    ensure_installed = "all",
+    highlight = { enable = true },
+    autotag = {
+      enable = true,
+    },
   }
+
+  require("nvim-treesitter.configs").setup(opts)
 end
 
 return M

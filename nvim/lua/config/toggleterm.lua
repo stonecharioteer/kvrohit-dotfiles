@@ -1,7 +1,7 @@
 local M = {}
 
 M.setup = function()
-  require('toggleterm').setup {
+  local opts = {
     open_mapping = [[<F12>]],
     direction = "float",
     float_opts = {
@@ -13,6 +13,8 @@ M.setup = function()
       },
     },
   }
+
+  require("toggleterm").setup(opts)
 end
 
 return M
